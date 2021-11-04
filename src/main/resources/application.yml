@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ms-teacher
+  h2:
+    console:
+      enabled: true
+server:
+  port: 7878
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 1
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8763/eureka/

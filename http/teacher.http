@@ -1,0 +1,20 @@
+### Test Teacher
+GET http://localhost:7878/v2/api/teacher/test
+Accept: application/json
+
+### Registrar Profesor/(a)
+POST http://localhost:7878/v2/api/teacher/save
+Content-Type: application/json
+
+{
+  "name":"Juan Carlos",
+  "subject":"Matematicas"
+}
+
+### Obtener todos los profesores
+GET http://localhost:7878/v2/api/teacher/all
+Accept: application/json
+
+### Obtener profesor por Id
+GET http://localhost:7878/v2/api/teacher?teacherId=1
+Accept: application/json
