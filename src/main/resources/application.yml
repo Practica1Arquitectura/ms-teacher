@@ -1,11 +1,11 @@
 spring:
   application:
-    name: ms-teacher
+    name: ms-teacher-sin-config-server
   h2:
     console:
       enabled: true
 server:
-  port: 7878
+  port: 7777
 
 eureka:
   instance:

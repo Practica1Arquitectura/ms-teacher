@@ -2,8 +2,17 @@
 GET http://localhost:7878/v2/api/teacher/test
 Accept: application/json
 
-### Registrar Profesor/(a)
+### Registrar Profesor/(a) por Ms-Teacher
 POST http://localhost:7878/v2/api/teacher/save
+Content-Type: application/json
+
+{
+  "name":"Juan Carlos",
+  "subject":"Matematicas"
+}
+
+### Registrar Profesor/(a) por Ms-Gateway
+POST http://localhost:8181/ms-teacher/v2/api/teacher/save
 Content-Type: application/json
 
 {
