@@ -27,3 +27,12 @@ Accept: application/json
 ### Obtener profesor por Id
 GET http://localhost:7878/v2/api/teacher?teacherId=1
 Accept: application/json
+
+### Actualizar Profesor/(a) por Ms-Teacher
+PUT http://localhost:7878/v2/api/teacher/update?teacherId=1
+Content-Type: application/json
+
+{
+  "name":"Juan Carlos12",
+  "subject":"Lenguaje"
+}
