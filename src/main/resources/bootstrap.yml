@@ -1,5 +1,5 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8887/
+      uri: ${CONFIG_URI:http://localhost:8887}
       name: "ms-teacher"
