@@ -33,6 +33,11 @@ public class TeacherController {
     @RequestMapping(path = "/all",method = RequestMethod.GET)
     public List<Teacher> getAllStudent(){
         List<Teacher> teachers = teacherRepository.findAll();
+        if(teachers.size()>0){
+            LOGGER.info("Se muestra los datos de todos los profesores");
+        }else {
+            LOGGER.warn("No se encontro ningun dato de los profesores");
+        }
         return teachers;
     }
 
@@ -41,6 +46,7 @@ public class TeacherController {
         Teacher teacherSearch = teacherRepository.findById(teacherId).get();
         teacherSearch.setName(teacher.getName());
         teacherSearch.setSubject(teacher.getSubject());
+        LOGGER.info("Se actualiza los datos del profesor");
         return teacherRepository.save(teacherSearch);
     }
 
@@ -49,9 +55,11 @@ public class TeacherController {
     public Teacher getStudent(@RequestParam Integer teacherId) throws Exception{
         Optional<Teacher> teacherOptional = teacherRepository.findById(teacherId);
         if (teacherOptional.isPresent()){
+            LOGGER.info("Se encontro al profesor");
             Teacher teacher = teacherOptional.get();
             return teacher;
         }else {
+            LOGGER.error("no se encontro al profesor");
             throw new Exception("No se encuentra el usuario");
         }
     }
